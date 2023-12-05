@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lg = "en">
+    <head>
+        <title>Right Anime</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <nav id = "navbar" class = "nav">
+            <div class="dropdown">
+                <div class="dropbtn">
+                    <div class="menudiv"></div>
+                    <div class="menudiv"></div>
+                    <div class="menudiv"></div>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#recently-updated">Recently Updated</a>
+                    <a href="#formSection">Anime recommendation form</a>
+                    <a href="#topanime">Top viewed anime</a>
+                </div>
+            </div>
+            <div id="logoContainer">
+                <img src = "poze/RightAnimeLogo.png" alt ="logo" id = "imgLogo">
+            </div>
+            <div class="search-container">
+                <form>
+                  <input type="text" placeholder="Search anime.." name="search">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </nav>
+        <section id = "recently-updated">
+            <div id = "recently-updated-container" class = "slider-container">
+                <a class="prev" onclick="plusCards(-1)">&#10094;</a>
+                <a class="next" onclick="plusCards(1)">&#10095;</a>
+                <div id="dotsCotainerRecentlyUpdated">
+                </div>
+            </div>
+        </section>
+        <div id="cotainerFormTop">
+            <section id="formSection">
+                <div id="formContainer">
+                    <h1 id="titleFormSection">Anime Recommendation</h1>
+                    <form id="FormAnimeRecomandation" name="FormRecomandation" onsubmit="getRecomandation(); return false;">
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Gender</h3>
+                            <h3 class="formCell">I like</h3>
+                            <h3 class="formCell">Whatever</h3>
+                            <h3 class="formCell">I don't like</h3>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Action</h3>
+                            <div class="formCell">
+                                <input type="radio" id="actionLike" name="action" value="action like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="actionWhatever" name="action" value="action whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="actionDislike" name="action" value="action dislike">
+                            </div>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Drama</h3>
+                            <div class="formCell">
+                                <input type="radio" id="dramaLike" name="drama" value="drama like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="dramaWhatever" name="drama" value="drama whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="dramaDislike" name="drama" value="drama dislike">
+                            </div>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Fantasy</h3>
+                            <div class="formCell">
+                                <input type="radio" id="fantasyLike" name="fantasy" value="fantasy like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="fantasyWhatever" name="fantasy" value="fantasy whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="fantasyDislike" name="fantasy" value="fantasy dislike">
+                            </div>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Mystery</h3>
+                            <div class="formCell">
+                                <input type="radio" id="mysteryLike" name="mystery" value="mystery like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="mysteryWhatever" name="mystery" value="mystery whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="mysteryDislike" name="mystery" value="mystery dislike">
+                            </div>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Psychological</h3>
+                            <div class="formCell">
+                                <input type="radio" id="psychologicalLike" name="psychological" value="psychological like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="psychologicalWhatever" name="psychological" value="psychological whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="psychologicalDislike" name="psychological" value="psychological dislike">
+                            </div>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Comedy</h3>
+                            <div class="formCell">
+                                <input type="radio" id="comedyLike" name="comedy" value="comedy like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="comedyWhatever" name="comedy" value="comedy whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="comedyDislike" name="comedy" value="comedy dislike">
+                            </div>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Romance</h3>
+                            <div class="formCell">
+                                <input type="radio" id="romanceLike" name="romance" value="romance like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="romanceWhatever" name="romance" value="romance whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="romanceDislike" name="romance" value="romance dislike">
+                            </div>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Slice of Life</h3>
+                            <div class="formCell">
+                                <input type="radio" id="sliceOfLifeLike" name="slice of life" value="Slice of Life like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="sliceOfLifeWhatever" name="slice of life" value="Slice of Life whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="sliceOfLifeDislike" name="slice of Life" value="Slice of Life dislike">
+                            </div>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Sci-Fi</h3>
+                            <div class="formCell">
+                                <input type="radio" id="sci-fiLike" name="sci-fi" value="sci-fi like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="sci-fiWhatever" name="sci-fi" value="sci-fi whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="sci-fiDislike" name="sci-fi" value="sci-fi dislike">
+                            </div>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Adventure</h3>
+                            <div class="formCell">
+                                <input type="radio" id="adventureLike" name="adventure" value="adventure like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="adventureWhatever" name="adventure" value="adventure whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="adventureDislike" name="adventure" value="adventure dislike">
+                            </div>
+                        </div>
+
+                        <div class="formDisplay">
+                            <h3 class="formCellFirst">Isekai</h3>
+                            <div class="formCell">
+                                <input type="radio" id="isekaiLike" name="isekai" value="isekai like">
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="isekaiWhatever" name="isekai" value="isekai whatever" checked>
+                            </div>
+                            <div class="formCell">
+                                <input type="radio" id="isekaiDislike" name="isekai" value="isekai dislike">
+                            </div>
+                        </div>
+
+                        <div id="submitRecomandationDiv">
+                            <input type="submit" value="Get Recommendation" id = "submitFormRecomandation">
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section id = "topanime">
+                <div id="topAnimeContainer">
+                    <h3 id = "titluTopAnime">Top anime</h3>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
